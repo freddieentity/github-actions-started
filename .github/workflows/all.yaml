@@ -12,6 +12,65 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Build
+        run: |
+          ./scripts/build.sh
+          
+      - name: Unit Test
+        run: |
+          ./scripts/unit-test.sh
+          
+      - name: SCA
+        run: |
+          ./scripts/sca.sh
+          
+      - name: SAST
+        run: |
+          ./scripts/sast.sh
+          
+      - name: Container Image Scan
+        run: |
+          ./scripts/container-image-scan.sh
+          
+      - name: Container Image Build And Push
+        run: |
+          ./scripts/container-image.sh
+          
+      - name: Kubesec
+        run: |
+          ./scripts/kubesec.sh
+          
+      - name: Deploy DEV
+        run: |
+          ./scripts/deploy.sh
+          
+      - name: Integration Test DEV
+        run: |
+          ./scripts/integration-test.sh
+          
+      - name: DAST
+        run: |
+          ./scripts/dast.sh
+          
+      - name: Environment Promotion
+        run: |
+          ./scripts/environment-promotion.sh
+          
+      - name: CIS Benchmark
+        run: |
+          ./scripts/cis-etcd.sh
+          ./scripts/cis-kubelet.sh
+          ./scripts/cis-master.sh
+          
+      - name: Deploy PROD
+        run: |
+          ./scripts/deploy.sh
+          
+      - name: Integration Test PROD
+        run: |
+          ./scripts/integration-test.sh
+          
       - name: Build
         run: |
           ./scripts/build.sh
