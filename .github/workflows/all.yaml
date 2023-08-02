@@ -1,4 +1,4 @@
-name: All Stages
+name: End to end workflow
 
 on:
   workflow_dispatch:
