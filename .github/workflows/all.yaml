@@ -15,62 +15,62 @@ jobs:
 
       - name: Build
         run: |
-          ./scripts/build.sh
+          ./.github/scripts/build.sh
 
       - name: Unit Test
         run: |
-          ./scripts/unit-test.sh
+          ./.github/scripts/unit-test.sh
 
       - name: SCA
         run: |
-          ./scripts/sca.sh
+          ./.github/scripts/sca.sh
 
       - name: SAST
         run: |
-          ./scripts/sast.sh
+          ./.github/scripts/sast.sh
 
       - name: Container Image Scan
         run: |
-          ./scripts/container-image-scan.sh
+          ./.github/scripts/container-image-scan.sh
 
       - name: Container Image Build And Push
         run: |
-          ./scripts/container-image.sh
+          ./.github/scripts/container-image.sh
 
       - name: Kubesec
         run: |
-          ./scripts/kubesec.sh
+          ./.github/scripts/kubesec.sh
 
       - name: Deploy DEV
         run: |
-          ./scripts/deploy.sh
+          ./.github/scripts/deploy.sh
 
       - name: Integration Test DEV
         run: |
-          ./scripts/integration-test.sh
+          ./.github/scripts/integration-test.sh
 
       - name: DAST
         run: |
-          ./scripts/dast.sh
+          ./.github/scripts/dast.sh
 
       - name: Environment Promotion
         run: |
-          ./scripts/environment-promotion.sh
+          ./.github/scripts/environment-promotion.sh
 
       - name: CIS Benchmark
         run: |
-          ./scripts/cis-etcd.sh
-          ./scripts/cis-kubelet.sh
-          ./scripts/cis-master.sh
+          ./.github/scripts/cis-etcd.sh
+          ./.github/scripts/cis-kubelet.sh
+          ./.github/scripts/cis-master.sh
 
       - name: Deploy PROD
         run: |
-          ./scripts/deploy.sh
+          ./.github/scripts/deploy.sh
 
       - name: Integration Test PROD
         run: |
-          ./scripts/integration-test.sh
+          ./.github/scripts/integration-test.sh
 
       - name: Build
         run: |
-          ./scripts/build.sh
+          ./.github/scripts/build.sh
