@@ -9,7 +9,7 @@ on:
 
 jobs:
   CI:
-    uses: freddieentity/github-actions-started/./.github/workflows/ci.yaml@main
+    uses: freddieentity/github-actions-started/.github/workflows/ci.yaml@main
     with:
       enabled: true
     
