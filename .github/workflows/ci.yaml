@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  workflow_call:
+    inputs:
+      enabled:
+        required: true
+        type: boolean
+        default: true
+  workflow_dispatch:
+  push:
+    branches: [ dev, release, main ]
+  pull_request:
+    branches: [ dev, release, main ]
+
+jobs:
+  PR:
+    uses: ./.github/workflows/pr.yaml
+
+  SCA:
+    needs: []
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3          
+      - name: SCA
+        run: |
+          ./.github/scripts/sca.sh
+
+  SAST:
+    needs: [SCA]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3          
+      - name: SAST
+        run: |
+          ./.github/scripts/sast.sh
+
+  ContainerImageScan:
+    needs: [SAST]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3          
+      - name: Container Image Scan
+        run: |
+          ./.github/scripts/container-image-scan.sh
+
+  ContainerImageBuildAndPush:
+    needs: [ContainerImageScan]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3          
+      - name: Container Image Build And Push
+        run: |
+          ./.github/scripts/container-image.sh
+
+  Kubesec:
+    needs: [ContainerImageBuildAndPush]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3          
+      - name: Kubesec
+        run: |
+          ./.github/scripts/kubesec.sh

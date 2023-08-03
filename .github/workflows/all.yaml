@@ -70,7 +70,3 @@ jobs:
       - name: Integration Test PROD
         run: |
           ./.github/scripts/integration-test.sh
-
-      - name: Build
-        run: |
-          ./.github/scripts/build.sh

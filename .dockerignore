@@ -1,0 +1,33 @@
+.git
+*.env*
+
+# Nuxtjs
+.nuxt/
+node_modules/
+
+# Unnecessary
+tests/
+coverage/
+Dockerfile
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfplan
+.terraform.lock.hcl
+infrastructure.tf
+
+# Debug
+*.azcli
+*.log
+
+# Misc
+.DS_Store
+.editorconfig
+.eslintignore
+.eslintrc.json
+
+# CI/CD
+.github/
+azure-pipelines/

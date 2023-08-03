@@ -1,0 +1,52 @@
+name: PR
+
+on:
+  workflow_call:
+    inputs:
+      enabled:
+        required: true
+        type: boolean
+        default: true
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Name"
+        required: true
+        default: "Fred"
+  push:
+    branches: [ dev, main ]
+  pull_request:
+    branches: [ dev, main ]
+
+jobs:       
+  Creds:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Creds
+        run: |
+          echo '${{ inputs.name }}'
+          echo '${{ env.ENV }}'
+          echo '${{ secrets.AWS_ACCESS_KEY_ID }}'
+
+  Build:
+    needs: [Creds]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3          
+      - name: Build
+        run: |
+          ./.github/scripts/build.sh
+
+  UnitTest:
+    needs: [Build]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3          
+      - name: Unit Test
+        run: |
+          ./.github/scripts/unit-test.sh
