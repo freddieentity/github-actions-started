@@ -9,7 +9,9 @@ on:
 
 jobs:
   CI:
-    uses: ./.github/workflows/ci.yaml
+    uses: freddieentity/github-actions-started/./.github/workflows/ci.yaml@main
+    with:
+      enabled: true
     
   DEV:
     if: github.ref == 'refs/heads/main'
