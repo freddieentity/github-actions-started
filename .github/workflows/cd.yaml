@@ -57,9 +57,7 @@ jobs:
       - uses: actions/checkout@v3          
       - name: CIS Benchmark
         run: |
-          ./.github/scripts/cis-etcd.sh
-          ./.github/scripts/cis-kubelet.sh
-          ./.github/scripts/cis-master.sh
+          ./.github/scripts/kube-bench.sh
 
   PROD:
     if: github.ref == 'refs/heads/main'
