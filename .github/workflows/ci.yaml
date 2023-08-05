@@ -15,8 +15,8 @@ on:
 
 jobs:
   PR:
-    # uses: ./.github/workflows/pr.yaml
-    uses: freddieentity/github-actions-started/.github/workflows/pr.yaml@main
+    uses: ./.github/workflows/pr.yaml
+    # uses: freddieentity/github-actions-started/.github/workflows/pr.yaml@main
     with:
       enabled: true
 

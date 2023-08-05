@@ -7,3 +7,12 @@ YELLOW       := $(shell tput -Txterm setab 3 && tput -Txterm setaf 0)
 YELLOW_TEXT  := $(shell tput -Txterm setaf 3)
 PURPLE       := $(shell tput -Txterm setab 5 && tput -Txterm setaf 7)
 PURPLE_TEXT  := $(shell tput -Txterm setaf 5)
+
+# ===========
+#  Command
+# ===========
+
+run:
+	@echo "act -W .github/workflows/ci.yaml"
+	@echo "${RESET}"
+	@act -W .github/workflows/ci.yaml
