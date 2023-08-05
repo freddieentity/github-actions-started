@@ -59,9 +59,7 @@ jobs:
 
       - name: CIS Benchmark
         run: |
-          ./.github/scripts/cis-etcd.sh
-          ./.github/scripts/cis-kubelet.sh
-          ./.github/scripts/cis-master.sh
+          ./.github/scripts/kube-bench.sh
 
       - name: Deploy PROD
         run: |
