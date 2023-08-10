@@ -7,9 +7,10 @@ act -j deploy # Run specific jobs
 ```
 
 # RELEASE MANAGEMENT
-- Semantic Versioning:
-
-- Conventional Commits:
+- Semantic Versioning
+Follow SemVer to tag software releases
+- Conventional Commits
+Commit message with meaningful content gives the releases more declarative and informative
 https://www.conventionalcommits.org/en/v1.0.0/
 https://www.npmjs.com/package/git-cz
 ```
@@ -19,5 +20,16 @@ https://www.npmjs.com/package/git-cz
 
 [optional footer(s)]
 ```
-- Standard Version:
-standard-version --release-as minor
+- Standard Version
+Perform software realese when everything is ready
+standard-version --release-as minor # patch, major
+standard-version --skip.bump --skip.commit --skip.tag
+
+- Software Tagging
+Standard version automatically create a corresponding tag locally
+git push --follow-tags origin main
+
+
+
+# Reference
+https://www.arnica.io/blog/what-every-developer-should-know-about-github-codeowners
