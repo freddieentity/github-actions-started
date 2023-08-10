@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.5](https://github.com/freddieentity/github-actions-started/compare/v1.1.4...v1.1.5) (2023-08-10)
+
+
+### Bug Fixes
+
+* **automation:** change to a single kube-bench script ([fad0ef0](https://github.com/freddieentity/github-actions-started/commit/fad0ef05ad86100a2e2373973b41f3951ee311e7))
+
 ### [1.1.4](https://github.com/freddieentity/github-actions-started/compare/v1.1.3...v1.1.4) (2023-08-10)
 
 ### [1.1.3](https://github.com/freddieentity/github-actions-started/compare/v1.1.2...v1.1.3) (2023-08-05)
