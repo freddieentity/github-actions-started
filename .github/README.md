@@ -24,6 +24,7 @@ https://www.npmjs.com/package/git-cz
 Perform software realese when everything is ready
 standard-version --release-as minor # patch, major
 standard-version --skip.bump --skip.commit --skip.tag
+.versionrc file configures which type is displayed
 
 - Software Tagging
 Standard version automatically create a corresponding tag locally
