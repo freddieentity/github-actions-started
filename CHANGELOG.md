@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://github.com/freddieentity/github-actions-started/compare/v1.1.5...v1.1.6) (2023-08-12)
+
+
+### 📝 Documentation
+
+* **standard-version:** Add .versionrc ([d4991a3](https://github.com/freddieentity/github-actions-started/commit/d4991a3be63a4eac20fb9e18458ac894fcd5765e))
+
 ### [1.1.5](https://github.com/freddieentity/github-actions-started/compare/v1.1.4...v1.1.5) (2023-08-10)
 
 
